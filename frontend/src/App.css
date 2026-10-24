@@ -1,0 +1,279 @@
+:root {
+  font-family: Inter, "Segoe UI", sans-serif;
+  color: #edf3fc;
+  background: #0b1120;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.dashboard {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  padding: 40px 28px;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 36px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: #78a9ff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  letter-spacing: -0.04em;
+}
+
+.subtitle {
+  color: #9ba9bd;
+  line-height: 1.6;
+}
+
+.dashboard-header .subtitle {
+  margin-bottom: 0;
+}
+
+.refresh-indicator {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 14px;
+  border: 1px solid #293548;
+  border-radius: 999px;
+  color: #b8c5d8;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #43d9a3;
+}
+
+.section {
+  margin-bottom: 30px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.section-heading > span,
+.unit-label {
+  color: #9ba9bd;
+  font-size: 0.82rem;
+}
+
+.status-grid,
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.status-card,
+.chart-card,
+.stats-card {
+  border: 1px solid #293548;
+  border-radius: 16px;
+  background: #111a2b;
+}
+
+.status-card {
+  padding: 24px;
+}
+
+.card-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.card-label {
+  color: #b8c5d8;
+  font-weight: 600;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.status-badge.online {
+  color: #43d9a3;
+  background: #16372f;
+}
+
+.status-badge.offline {
+  color: #ff8c9b;
+  background: #3d202c;
+}
+
+.status-badge.offline .status-dot {
+  background: #ff6b81;
+}
+
+.latency-value {
+  margin-top: 24px;
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.06em;
+}
+
+.latency-value span {
+  color: #9ba9bd;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.target-address {
+  margin-bottom: 8px;
+  color: #b8c5d8;
+  font-family: Consolas, monospace;
+}
+
+.card-footnote {
+  margin-bottom: 0;
+  color: #77879f;
+  font-size: 0.78rem;
+}
+
+.chart-card {
+  padding: 24px;
+}
+
+.chart-card .section-heading .subtitle {
+  margin: 6px 0 0;
+  font-size: 0.85rem;
+}
+
+.chart-container {
+  width: 100%;
+  height: 320px;
+  margin-top: 18px;
+}
+
+.empty-state {
+  display: grid;
+  min-height: 220px;
+  place-items: center;
+  color: #9ba9bd;
+}
+
+.stats-card {
+  padding: 22px;
+}
+
+.stats-card h3 {
+  margin: 0 0 20px;
+  font-size: 1rem;
+}
+
+.stat-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 0;
+  border-top: 1px solid #293548;
+  font-size: 0.88rem;
+}
+
+.stat-row span {
+  color: #9ba9bd;
+}
+
+.stat-row strong {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.error-banner {
+  margin-bottom: 22px;
+  padding: 14px 16px;
+  border: 1px solid #9f4051;
+  border-radius: 10px;
+  background: #3d202c;
+  color: #ffb6c1;
+}
+
+.dashboard-footer {
+  padding-top: 18px;
+  border-top: 1px solid #293548;
+  color: #77879f;
+  font-size: 0.78rem;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .dashboard {
+    padding: 28px 16px;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+  }
+
+  .status-grid,
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+  }
+
+  .chart-card {
+    padding: 18px 12px;
+  }
+
+  .chart-container {
+    height: 280px;
+  }
+}

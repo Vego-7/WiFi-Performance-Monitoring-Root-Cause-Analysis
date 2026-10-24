@@ -12,7 +12,7 @@ from pymongo import MongoClient
 load_dotenv()
 
 MONGODB_URI = os.getenv(
-    "MONGODB_URI",
+    "MONGODB_URL",
     "mongodb://127.0.0.1:27017/"
 )
 GATEWAY_IP = os.getenv("GATEWAY_IP", "192.168.1.1")
